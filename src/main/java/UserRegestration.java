@@ -75,9 +75,9 @@ public class UserRegestration {
 	private void passwordValidation() {
 		String pass;
 		Scanner get = new Scanner(System.in);
-		System.out.println("Enter Password : \t note:min 8char");
+		System.out.println("Enter Password : \t note:min 8char,one capital,one numaric");
 		pass = get.next();
-		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
+		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{8,}$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(pass);
 		if (matcher.find())
