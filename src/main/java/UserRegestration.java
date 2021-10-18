@@ -69,6 +69,22 @@ public class UserRegestration {
 		else
 			System.out.println("Pattern not matched");
 	}
+	/*
+	 * Password Validation
+	 */
+	private void passwordValidation() {
+		String pass;
+		Scanner get = new Scanner(System.in);
+		System.out.println("Enter Password : \t note:min 8char");
+		pass = get.next();
+		String regex = "^[0-9a-zA-Z!,@#$&*().]{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(pass);
+		if (matcher.find())
+			System.out.println("Pattern matched");
+		else
+			System.out.println("Pattern not matched");
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to regex");
@@ -77,5 +93,6 @@ public class UserRegestration {
 		userRegestration.lastName();
 		userRegestration.emailValidation();
 		userRegestration.mobileValidation();
+		userRegestration.passwordValidation();
 	}
 }
